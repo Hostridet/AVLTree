@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/rumya/CLionProjects/AVLTree/Method.cpp
+Method.h
+/cygdrive/c/Users/rumya/CLionProjects/AVLTree/Method.h
+iostream
+/cygdrive/c/Users/rumya/CLionProjects/AVLTree/iostream
+
+/cygdrive/c/Users/rumya/CLionProjects/AVLTree/Method.h
+iostream
+-
+
+/cygdrive/c/Users/rumya/CLionProjects/AVLTree/main.cpp
+iostream
+-
+Method.h
+/cygdrive/c/Users/rumya/CLionProjects/AVLTree/Method.h
+
