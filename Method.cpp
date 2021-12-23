@@ -144,16 +144,20 @@ AVLTree::node AVLTree::remove(node p, type k) {
     else if( k > p->data )
         p->right = remove(p->right,k);
     else { //  k == p->key
-        /*
-        node q = p->left;
-        node r = p->right;
-        delete p;
-        if( !r ) return q;
-        node min = findmin(r);
-        min->right = removemin(r);
-        min->left = q;
-        return balance(min); */
-        p->counter--;
+        if (p->counter <= 1)
+        {
+            node q = p->left;
+            node r = p->right;
+            delete p;
+            if( !r ) return q;
+            node min = findmin(r);
+            min->right = removemin(r);
+            min->left = q;
+            return balance(min);
+        }
+        else {
+            p->counter--;
+        }
     }
     return balance(p);
 }
