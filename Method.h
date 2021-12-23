@@ -10,6 +10,7 @@ class AVLTree {
         int height;
         Node* left;
         Node* right;
+        int counter = 1;
         Node(type k) { data = k; left = right = 0; height = 1; }
     };
 
@@ -46,6 +47,4 @@ public:
     void printTree();
     node getRoot ();
     bool compare(AVLTree &sec);
-
-
 };

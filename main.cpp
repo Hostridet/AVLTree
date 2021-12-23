@@ -26,8 +26,9 @@ int main() {
     {
         test1.add(10-i);
     }
+    test1.add(7);
+    test1.add(10);
     test1.printTree();
-
 
     return 0;
 }

@@ -40,8 +40,10 @@ void AVLTree::print(node root, int space) {
         // count
         for (int i = COUNT; i < space; i++)
             cout << " ";
-        cout << root->data << "\n";
-
+        if (root->counter == 1)
+            cout << root->data << "\n";
+        else
+            cout << root->data << "(" << root->counter << ")" << "\n";
         // Process left child
         print(root->left, space);
     }
@@ -119,6 +121,8 @@ AVLTree::node AVLTree::insert(node p, type k) {
         p->left = insert(p->left,k);
     if (k > p->data)
         p->right = insert(p->right,k);
+    if (k == p->data)
+        p->counter++;
     return balance(p);
 }
 
@@ -139,7 +143,8 @@ AVLTree::node AVLTree::remove(node p, type k) {
         p->left = remove(p->left,k);
     else if( k > p->data )
         p->right = remove(p->right,k);
-    else {                        //  k == p->key
+    else { //  k == p->key
+        /*
         node q = p->left;
         node r = p->right;
         delete p;
@@ -147,7 +152,8 @@ AVLTree::node AVLTree::remove(node p, type k) {
         node min = findmin(r);
         min->right = removemin(r);
         min->left = q;
-        return balance(min);
+        return balance(min); */
+        p->counter--;
     }
     return balance(p);
 }
